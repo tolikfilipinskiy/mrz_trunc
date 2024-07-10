@@ -17,6 +17,8 @@
 
 transliteration = {
     # ICAO specifications
+    u"\u002E": "",     # .
+    u"\u2024": "",     # .
     u"\u0027": "",     # '
     u"\u0628": "B",    # ب
     u"\u062B": "XTH",  # ث
