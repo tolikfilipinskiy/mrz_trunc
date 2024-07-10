@@ -16,6 +16,8 @@
 # Latin based
 
 transliteration = {
+    u"\u002E": "",     # .
+    u"\u2024": "",     # .
     u"\u0027": "",                      # '
     u"\u00C1": "A",   u"\u00E1": "a",   # Á, á
     u"\u00C0": "A",   u"\u00E0": "a",   # À, à
