@@ -18,6 +18,8 @@
 # Cyrillic with belarussian special char added
 
 transliteration = {
+    u"\u002E": "",     # .
+    u"\u2024": "",     # .
     u"\u0027": "",                         # '
     u"\u0410": "A",    u"\u0430": "a",     # А, а
     u"\u0411": "B",    u"\u0431": "b",     # Б, б
