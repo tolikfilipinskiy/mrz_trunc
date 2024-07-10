@@ -16,6 +16,8 @@
 # Modern hebrew (Experimental)
 
 transliteration = {
+    u"\u002E": "",     # .
+    u"\u2024": "",     # .
     u"\u0027": "",                 # '
 
     # Consonants
