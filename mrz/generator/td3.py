@@ -83,7 +83,27 @@ class _TD3HolderName(_HolderName):
         """Return identifier (the primary and secondary identifiers)
 
         """
-        return check.field(self.surname + "<<" + self.given_names, 39, "full name", "<")
+        # return check.field(self.surname + "<<" + self.given_names, 39, "full name", "<")
+        if len(self.surname + self.given_names) <= 37:
+            return check.field(self.surname + "<<" + self.given_names, 39, "full name", "<")
+            
+        # truncate identifiers to initials (approach in sec. 4.2.3.1 a)).
+        # see: https://www.icao.int/publications/Documents/9303_p5_cons_en.pdf
+        parts_sur = self.surname.split("<")
+        parts_giv = self.given_names.split("<")
+        parts = parts_sur + parts_giv
+
+        # reserve chars for initials and fillers '<' or '<<'.
+        chars_to_distribute = 37 - 1 * (2 * len(parts)-2)
+        parts_trunc = []
+        for idx, part in enumerate(parts):
+            chars_of_part = min(chars_to_distribute, len(part)-1)
+            chars_to_distribute -= chars_of_part
+            parts_trunc.append(part[0:chars_of_part+1])
+            # insert '' to separate surname from given names
+            if idx + 1 == len(parts_sur):
+                parts_trunc.append("")    
+        return check.field("<".join(parts_trunc), 39, "full name", "<")
 
 
 class TD3CodeGenerator(_FieldsGenerator, _TD3HashGenerator, _TD3HolderName):
