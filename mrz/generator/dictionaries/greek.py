@@ -16,6 +16,8 @@
 # Modern greek (Experimental)
 
 transliteration = {
+    u"\u002E": "",     # .
+    u"\u2024": "",     # .
     u"\u0027": "",
     u"\u0386": "A", u"\u03AC": "a",    # Ά, ά
     u"\u0391": "A", u"\u03B1": "a",    # Α, α
