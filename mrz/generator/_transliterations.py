@@ -51,6 +51,16 @@ def cyrillic_ukrainian():
     return transliteration
 
 
+def cyrillic_kazakhstan():
+    from mrz.generator.dictionaries.cyrillic_kazakhstan import transliteration
+    return transliteration
+
+
+def vietnamese():
+    from mrz.generator.dictionaries.vietnamese import transliteration
+    return transliteration
+    
+
 def greek():
     from mrz.generator.dictionaries.greek import transliteration
     return transliteration
